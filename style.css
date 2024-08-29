@@ -1,0 +1,89 @@
+*::before,
+ *::after{
+     margin: 0;
+     padding: 0;
+     box-sizing: inherit;
+ }
+ 
+ html{
+     font-family: 'Roboto', sans-serif;
+     font-size: 10px;
+     box-sizing: border-box;
+     color: #ff27ff;
+ }
+ body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    background: #ffff80,#ff8085;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    text-align: center;
+    height: 100vh;
+}
+h1{
+    font-size: clamp(20px, 4w, 30px);
+    line-height: 1.2;
+    margin-bottom: 40px;
+    margin-top: 150px;
+}
+main{
+    max-width: 520px;
+    margin: 0 auto;
+    
+}
+summary{
+    font-size: 1.25rem;
+    font-weight: 600;
+    background: linear-gradient(45deg, #444, #ff8085);
+    color: #ffff80;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    position: relative;
+ 
+}
+table{
+    width: 100%;
+
+    background: rgb(248, 248, 248);
+    font-family:sans-serif;
+}
+input{
+    display: block;
+    width: 500px;
+    height: 10vh;
+    font-size: 16px;
+    font-weight: 1.25rem;
+}
+p{
+    text-align: left;
+}
+details[open] summary ~ * {
+    animation: sweep .5s ease-in-out; 
+}
+@keyframes sweep {
+    0%{
+        opacity: 0;
+        margin-top: 0px;
+    }
+    100%{
+        opacity: 0;
+        margin-top: 0px;
+    }
+}
+details > summary::after{
+    position: absolute;
+    content:  "+";
+    right: 20px;
+}
+details[open] > summary::after{
+    position: absolute;
+    content: "-";
+    right: 20px;
+}
+details > summary::-webkit-details-marker{
+    display: none;
+}
